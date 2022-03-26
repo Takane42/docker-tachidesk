@@ -1,7 +1,6 @@
 #!/bin/sh
-if [ ! -f /home/suwayomi/.local/share/Tachidesk/docker_touchfile ]; then
-	touch /home/suwayomi/.local/share/Tachidesk/docker_touchfile
-	curl -s --create-dirs -L https://raw.githubusercontent.com/Suwayomi/docker-tachidesk/main/server.conf -o /home/suwayomi/.local/share/Tachidesk/server.conf;
+if [ ! -f "/usr/share/tachidesk/data/server.conf" ]; then
+    curl "https://raw.githubusercontent.com/Suwayomi/docker-tachidesk/main/server.conf" -o /usr/share/tachidesk/data/server.conf
 fi
 echo ""
 echo ""
@@ -11,8 +10,8 @@ echo "-> Readme for ghcr.io/suwayomi/tachidesk is available at https://github.co
 echo "                                                                *****************************"
 echo ""
 echo ""
-echo "Tachidesk data location inside the container -> /home/suwayomi/.local/share/Tachidesk"
+echo "Tachidesk data location inside the container -> /usr/share/tachidesk/data"
 echo ""
-echo "The server is running by default configuration on  http://localhost:4567"
-echo "log file location inside the container -> /home/suwayomi/.local/share/Tachidesk/logfile.log"
-exec java -jar "/home/suwayomi/startup/tachidesk_latest.jar" > /home/suwayomi/.local/share/Tachidesk/logfile.log 2>&1;
+echo "The server is running by default configuration on  http://0.0.0.0:4567"
+echo "log file location inside the container -> /usr/share/tachidesk/logfile.log"
+exec java -Dsuwayomi.tachidesk.config.server.rootDir="/usr/share/tachidesk/data" -jar "/usr/share/tachidesk/tachidesk_latest.jar" > /usr/share/tachidesk/data/logfile.log 2>&1;

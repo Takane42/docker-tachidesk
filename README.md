@@ -1,3 +1,5 @@
+## If you clone this repo from Takane42 Fork. Please use nata branch instead. This is just for PR to Main Repo
+
 # Tachidesk-docker
 
 | Status | Stable |Preview | Discord Support|
@@ -10,11 +12,11 @@ Docker Releases - https://github.com/suwayomi/docker-tachidesk/pkgs/container/ta
 
 Dockerfile - https://github.com/suwayomi/docker-tachidesk
 
-_**Tachidesk data location - /home/suwayomi/.local/share/Tachidesk**_
+_**Tachidesk data location - /usr/share/tachidesk/data**_
 
 Docker images are mutli-arch (linux/386, linux/amd64, linux/arm/v6, linux/arm/v7, linux/arm64, linux/ppc64le, linux/s390x) and has very small size based on alpine linux.
 
-Log file location - /home/suwayomi/.local/share/Tachidesk/logfile.log
+Log file location - /usr/share/tachidesk/data/logfile.log
 
 # Docker compose
 Use the template compose.yml in this repo for creating and starting tachidesk docker container.  
@@ -43,7 +45,7 @@ For Tachidesk Preview version
 
 Persistent data of tachidesk on subsequent run
 
-    docker run -p 127.0.0.1:4567:4567 -v <folder path>:/./home/suwayomi/.local/share/Tachidesk ghcr.io/suwayomi/tachidesk   
+    docker run -p 127.0.0.1:4567:4567 -v <folder path>:/usr/share/tachidesk/data ghcr.io/suwayomi/tachidesk   
 	 
 For Specific Tachidesk stable version (from v0.3.9 onwards)
 
