@@ -1,15 +1,15 @@
 ---
-version: "2.1"
+version: "3"
+
 services:
   tachidesk:
     image: ghcr.io/suwayomi/tachidesk
     container_name: tachidesk
     environment:
-      - PUID=1000
-      - PGID=1000
       - TZ=< change it to your timezone > # Use TZ database name from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
     volumes:
-      - </path/to/folder>/tachidesk:/home/suwayomi/.local/share/Tachidesk
+      - </path/to/server.conf>:/usr/share/tachidesk/server.conf:ro
+      - </path/to/data folder>:/usr/share/tachidesk/data:rw
     ports:
       - 4567:4567
     restart: unless-stopped
