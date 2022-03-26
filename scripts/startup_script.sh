@@ -1,4 +1,7 @@
 #!/bin/sh
+if [ ! -f "/usr/share/tachidesk/data/server.conf" ]; then
+    curl "https://github.com/Takane42/docker-tachidesk/blob/nata/server.conf" -o /usr/share/tachidesk/data/server.conf
+fi
 echo ""
 echo ""
 echo "                                                                ************README***********"

@@ -6,7 +6,7 @@ RUN mkdir -p /usr/share/tachidesk/data
 
 WORKDIR /usr/share/tachidesk
 
-RUN curl "https://raw.githubusercontent.com/Takane42/docker-tachidesk/main/scripts/startup_script.sh" -o /usr/share/tachidesk/startup_script.sh
+RUN curl "https://raw.githubusercontent.com/Takane42/docker-tachidesk/nata/scripts/startup_script.sh" -o /usr/share/tachidesk/startup_script.sh
 
 RUN curl -L $(curl -s https://api.github.com/repos/suwayomi/tachidesk-server/releases/latest | grep -o "https.*jar") -o /usr/share/tachidesk/tachidesk_latest.jar
 
