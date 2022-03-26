@@ -1,3 +1,5 @@
+## If you clone this repo from Takane42 Fork. Please use nata branch instead. This is just for PR to Main Repo
+
 # Tachidesk-docker
 
 | Status | Stable |Preview | Discord Support|
@@ -6,15 +8,15 @@
 
 Run [Tachidesk](https://github.com/Suwayomi/Tachidesk) server inside docker container as non-root user. The server will be running on http://localhost:4567 open this url in your browser.
 
-Docker Releases - https://github.com/suwayomi/docker-tachidesk/pkgs/container/tachidesk
+Docker Releases - https://github.com/nata/docker-tachidesk/pkgs/container/tachidesk
 
-Dockerfile - https://github.com/suwayomi/docker-tachidesk
+Dockerfile - https://github.com/nata/docker-tachidesk
 
-_**Tachidesk data location - /home/suwayomi/.local/share/Tachidesk**_
+_**Tachidesk data location - /usr/share/tachidesk/data**_
 
 Docker images are mutli-arch (linux/386, linux/amd64, linux/arm/v6, linux/arm/v7, linux/arm64, linux/ppc64le, linux/s390x) and has very small size based on alpine linux.
 
-Log file location - /home/suwayomi/.local/share/Tachidesk/logfile.log
+Log file location - /usr/share/tachidesk/data/logfile.log
 
 # Docker compose
 Use the template compose.yml in this repo for creating and starting tachidesk docker container.  
@@ -23,31 +25,28 @@ Use the template compose.yml in this repo for creating and starting tachidesk do
 
 Expose to localhost ip
 
-    docker run -p 127.0.0.1:4567:4567 ghcr.io/suwayomi/tachidesk
+    docker run -p 127.0.0.1:4567:4567 ghcr.io/nata/tachidesk
 
 Expose to specific ip
 
-    docker run -p 192.168.x.x:4567:4567 ghcr.io/suwayomi/tachidesk
+    docker run -p 192.168.x.x:4567:4567 ghcr.io/nata/tachidesk
 
 Expose to all ips
 
-    docker run -p 4567:4567 ghcr.io/suwayomi/tachidesk
+    docker run -p 4567:4567 ghcr.io/nata/tachidesk
 
 Change the default UTC timezone. Use TZ database name from [Timezone list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
-    docker run -e "TZ=Europe/London" -p 127.0.0.1:4567:4567 ghcr.io/suwayomi/tachidesk
+    docker run -e "TZ=Europe/London" -p 127.0.0.1:4567:4567 ghcr.io/nata/tachidesk
 	
 For Tachidesk Preview version
 
-     docker run -p 127.0.0.1:4567:4567 ghcr.io/suwayomi/tachidesk:preview
+     docker run -p 127.0.0.1:4567:4567 ghcr.io/nata/tachidesk:preview
 
 Persistent data of tachidesk on subsequent run
 
-    docker run -p 127.0.0.1:4567:4567 -v <folder path>:/./home/suwayomi/.local/share/Tachidesk ghcr.io/suwayomi/tachidesk   
+    docker run -p 127.0.0.1:4567:4567 -v <folder path>:/usr/share/tachidesk/data ghcr.io/nata/tachidesk   
 	 
-For Specific Tachidesk stable version (from v0.3.9 onwards)
-
-     docker run -p 127.0.0.1:4567:4567 ghcr.io/suwayomi/tachidesk:v0.3.9
 
 # Credit
 
