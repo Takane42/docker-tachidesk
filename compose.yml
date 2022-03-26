@@ -3,7 +3,7 @@ version: "3"
 
 services:
   tachidesk:
-    image: ghcr.io/takane42/tachidesk
+    image: ghcr.io/suwayomi/tachidesk
     container_name: tachidesk
     environment:
       - TZ=< change it to your timezone > # Use TZ database name from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
