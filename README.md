@@ -25,23 +25,19 @@ Use the template compose.yml in this repo for creating and starting tachidesk do
 
 Expose to localhost ip
 
-    docker run -p 127.0.0.1:4567:4567 ghcr.io/nata/tachidesk
+    docker run -p 127.0.0.1:4567:4567 ghcr.io/takane42/tachidesk
 
 Expose to specific ip
 
-    docker run -p 192.168.x.x:4567:4567 ghcr.io/nata/tachidesk
+    docker run -p 192.168.x.x:4567:4567 ghcr.io/takane42/tachidesk
 
 Expose to all ips
 
-    docker run -p 4567:4567 ghcr.io/nata/tachidesk
+    docker run -p 4567:4567 ghcr.io/takane42/tachidesk
 
 Change the default UTC timezone. Use TZ database name from [Timezone list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
-    docker run -e "TZ=Europe/London" -p 127.0.0.1:4567:4567 ghcr.io/nata/tachidesk
-	
-For Tachidesk Preview version
-
-     docker run -p 127.0.0.1:4567:4567 ghcr.io/nata/tachidesk:preview
+    docker run -e "TZ=Europe/London" -p 127.0.0.1:4567:4567 ghcr.io/takane42/tachidesk
 
 Persistent data of tachidesk on subsequent run
 
